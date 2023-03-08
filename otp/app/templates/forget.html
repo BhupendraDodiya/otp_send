@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{data.title}}</title>
+</head>
+<body>
+<form method="post" action="/gen/">
+    {% csrf_token %}
+    {% if messages %}
+    {% for i in messages %}
+    <strong>messages :</strong>{{i}}<br>
+    {% endfor %}
+    {% endif %}
+    <h1>FORGET PASSWORD</h1>
+    <label>Email</label><br><br>
+    <input type="email" name="em"/> <br><br>
+    <input type="submit" value="FORGET"/><br><br>
+    <a href="/">signup</a>&nbsp&nbsp
+    <a href="/login/">login</a>
+</form>
+</body>
+</html>

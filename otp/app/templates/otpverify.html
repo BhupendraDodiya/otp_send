@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{data.title}}</title>
+</head>
+<body>
+<form method="post" action="/verify/">
+    {% csrf_token %}
+    {% if messages %}
+    {% for i in messages %}
+    <strong>messages :</strong>{{i}}<br>
+    {% endfor %}
+    {% endif %}
+    <h1>OTP</h1>
+    <input type="hidden" name='co' value='{{code}}'/>
+    <label>Email</label><br><br>
+    <input type="email" name="em"/> <br><br>
+    <label>otp</label><br><br>
+    <input type="text" name="ot"/> <br><br>
+    <input type="submit" value="confirm"/><br><br>
+    <a href="/">signup</a>&nbsp&nbsp
+    <a href="/login/">login</a>
+</form>
+</body>
+</html>

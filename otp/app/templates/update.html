@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{data.title}}</title>
+</head>
+<body>
+<form method="post" action="/check/">
+    {% csrf_token %}
+    {% if messages %}
+    {% for i in messages %}
+    <strong>messages :</strong>{{i}}<br>
+    {% endfor %}
+    {% endif %}
+    <h1>UPDATE</h1>
+    <label>Email</label>
+    <input type="email" name='em' />
+    <label>new password</label>
+    <input type="password" name="pa"/>
+    <input type="submit" value='create password' />
+</form>
+</body>
+</html>
